@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    container_name: 'rk_web'
+    build: ./docker/web
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./www:/var/www
+      - ./docker/web/apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
+    ports:
+      - '8000:80'
+    tty: true
+
+  db:
+    container_name: 'rk_db'
+    build: ./docker/db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=local_db
+      - MYSQL_USER=docker_user
+      - MYSQL_PASSWORD=docker_pass
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./docker/db/mysql/:/var/lib/mysql/
+      - ./docker/db/init:/docker-entrypoint-initdb.d

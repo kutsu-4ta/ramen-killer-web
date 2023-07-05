@@ -1,0 +1,14 @@
+/*ホバー*/
+.ant-card-hoverable:hover {
+    cursor: pointer;
+    transition: box-shadow 0.2s,border-color 0.2s;
+}
+/*オーバーレイ演出のためのクラス*/
+.over-lay:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+.over-lay:hover img {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
