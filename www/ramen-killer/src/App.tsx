@@ -10,9 +10,6 @@ import {
 // ページ群
 import Login from "./views/login/_login";
 import Home from "./views/home/_home";
-import Artist from "./views/artist/_artist";
-import NowPlaying from "./views/nowPlaying/_nowPlaying";
-import ArtWork from "./views/artWork/_artWork";
 import './styles/styles.css';
 import AccountSetting from "./views/accountSetting/_accountSetting";
 import SignUp from "./views/signUp/_signUp";
@@ -24,9 +21,6 @@ import {HomeOutlined, SearchOutlined, TeamOutlined} from "@ant-design/icons";
 const redirectPathToSignUp         = '/signUp';
 const redirectPathToLogin          = '/login';
 const redirectPathToHome           = '/home';
-const redirectPathToArtist         = '/artist';
-const redirectPathToArtWork        = '/artWork';
-const redirectPathToNowPlaying     = '/nowPlaying';
 const redirectPathToAccountSetting = '/accountSetting';
 
 // antDesignコンポーネント
@@ -70,15 +64,6 @@ const App: React.FunctionComponent = () => {
                                             </Routes>
                                             <Routes>
                                                 <Route path={redirectPathToHome} element={<Home/>}/>
-                                            </Routes>
-                                            <Routes>
-                                                <Route path={redirectPathToArtWork} element={<ArtWork/>}/>
-                                            </Routes>
-                                            <Routes>
-                                                <Route path={redirectPathToArtist} element={<Artist/>}/>
-                                            </Routes>
-                                            <Routes>
-                                                <Route path={redirectPathToNowPlaying} element={<NowPlaying/>}/>
                                             </Routes>
                                             <Routes>
                                                 <Route path={redirectPathToAccountSetting} element={<AccountSetting/>}/>
@@ -168,8 +153,7 @@ const HeaderNav: React.FunctionComponent = () => {
     const headerItems: MenuProps['items'] = [
         _generateMenuItem('', 'sub1', <AvatarIcon/>, [
             _generateMenuItem(<Link to={'/profile'}>profile</Link>, '1'),
-            _generateMenuItem(<Link to={'/your-works'}>works</Link>, '2'),
-            _generateMenuItem(<Link to={'/wip'}>WIP</Link>, '3'),
+            _generateMenuItem(<Link to={'/your-ramen'}>your ramen</Link>, '2'),
             _generateMenuItem(<Link to={redirectPathToAccountSetting}>account Setting</Link>, '4'),
         ]),
     ];

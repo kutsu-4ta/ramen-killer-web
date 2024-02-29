@@ -6,8 +6,6 @@ import {authenticationState} from "../../atoms/authenticationState";
 import axios from "axios";
 import swal from "sweetalert";
 // 遷移先 TODO: 【低】定数ファイル
-// const redirectPathToArtist  = '/artist';
-// const redirectPathToArtWork = '/artWork';
 
 const selectedLanguage   = 'ENGLISH';
 const redirectPathToHome = '/home';
